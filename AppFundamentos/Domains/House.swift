@@ -52,7 +52,7 @@ extension House: Equatable{
 // Mark: - Proxies
 extension House {
     var proxyForEquality: String {
-        return "\(name) \(sigil) \(words)"
+        return "\(name) \(sigil) \(count)"
     }
 }
 
