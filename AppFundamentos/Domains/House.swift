@@ -51,11 +51,19 @@ extension House: Equatable{
 // Mark: - Hashable
 extension House: Hashable{
     var hashValue: Int {
-        return proxyForComparison.hashValue
+        return proxyForEquality.hashValue
     }
     
 }
 
+// Mark: - Comparable
+extension House: Comparable{
+    static func <(lhs: House, rhs: House) -> Bool {
+        return lhs.proxyForComparison < rhs.proxyForComparison
+    }
+    
+    
+}
 
 // Mark: - Proxies
 extension House {
@@ -65,8 +73,8 @@ extension House {
 }
 
 extension House {
-    var proxyForComparison: String{
-        return "\(name) \(sigil) \(words)"
+    var proxyForComparison: String {
+        return name.uppercased()
     }
 }
 

@@ -94,4 +94,8 @@ class HouseTests: XCTestCase {
         XCTAssertNotNil(starkHouse.hashValue)
     }
     
+    func testHouseComparison() {
+        XCTAssertLessThan(lannisterHouse, starkHouse)
+    }
+    
 }
