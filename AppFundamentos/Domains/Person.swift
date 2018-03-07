@@ -26,15 +26,13 @@ final class Person {
         return _alias ?? ""
     }
     
-    init(name: String, alias: String, house: House) {
+    init(name: String, alias: String?, house: House) {
         self.name = name
         _alias = alias
         self.house = house
     }
     
-    init(name: String, house: House) {
-        self.name = name
-        _alias = nil
-        self.house = house
+    convenience init(name: String, house: House) {
+        self.init(name: name, alias: nil, house: house)
     }
 }
