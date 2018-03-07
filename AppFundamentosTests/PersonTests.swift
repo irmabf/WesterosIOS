@@ -15,19 +15,34 @@ import XCTest
 
 class PersonTests: XCTestCase {
     
-    var starkHouse: House!
     var starkSigil: Sigil!
+    var lannisterSigil: Sigil!
+    
     var starkWords: Words!
+    var lannisterWords: Words!
+    
+    var starkHouse: House!
+    var lannisterHouse: House!
+    
     var ned: Person!
     var arya: Person!
+    var tyrion: Person!
     
     override func setUp() {
         super.setUp()
         starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Grey Direwolf")
         starkWords = Words(words: "Winter is coming")
         starkHouse = House(name: "Stark", sigil: starkSigil, words: starkWords)
+        
+        lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant Lion")
+        lannisterWords = Words(words: "Here me roar")
+        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: lannisterWords)
+        
         ned = Person(name: "Eddard", alias: "Eddard", house: starkHouse)
         arya = Person(name: "Arya",  house: starkHouse)
+        tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        
+
         
     }
     
@@ -38,14 +53,22 @@ class PersonTests: XCTestCase {
     
     func testPersonExistence() {
      
-        
-        
         XCTAssertNotNil(ned)
         XCTAssertNotNil(arya)
     }
     
-    
     func testFullName() {
         XCTAssertEqual(ned.fullName, "Eddard Stark")
     }
+    
+    func testPersonEquality() {
+        //Identidad
+        XCTAssertEqual(ned, ned)
+        //igualdad
+        let imp = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        XCTAssertEqual(tyrion, imp)
+        //Desigualdad
+        XCTAssertNotEqual(tyrion, arya)
+    }
+    
 }
