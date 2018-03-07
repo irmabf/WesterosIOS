@@ -78,5 +78,15 @@ class HouseTests: XCTestCase {
         starkHouse.add(person: tyrion)
         XCTAssertEqual(starkHouse.count, 2)
     }
+    func testHouseEquality() {
+        //identidad
+        XCTAssertEqual(starkHouse, starkHouse)
+        //igualdad
+        let jinxedHouse = House(name: "Stark", sigil: starkSigil, words: starkWords)
+        XCTAssertEqual(starkHouse, jinxedHouse)
+        //Desigualdad
+        XCTAssertNotEqual(starkHouse, lannisterHouse)
+        
+    }
     
 }

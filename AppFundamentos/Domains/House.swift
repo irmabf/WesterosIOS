@@ -34,11 +34,28 @@ extension House{
     
     func add(person: Person) {
         //Prevent for adding members from diferent houses to the same house
-        guard person.house.name == self.name else { return }
+        guard person.house == self else { return }
         _members.insert(person)
         
     }
 }
+
+// Mark: - Equatable
+extension House: Equatable{
+    static func ==(lhs: House, rhs: House) -> Bool {
+        return lhs.proxyForEquality == rhs.proxyForEquality
+    }
+    
+    
+}
+
+// Mark: - Proxies
+extension House {
+    var proxyForEquality: String {
+        return "\(name) \(sigil) \(words)"
+    }
+}
+
 
 // Mark: - Sigil
 final class Sigil {
