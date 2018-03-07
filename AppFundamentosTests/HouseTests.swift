@@ -11,20 +11,36 @@ import XCTest
 
 
 
-let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Grey Direwolf")
-let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant Lion")
 
-let starkWords = Words(words: "Winter is coming")
-let lannisterWords = Words(words: "Here me roar")
-
-let starkHouse = House(name: "Stark", sigil: starkSigil, words: starkWords)
-let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: lannisterWords)
 
 class HouseTests: XCTestCase {
     
+    var starkSigil: Sigil!
+    var lannisterSigil: Sigil!
+    
+    var starkWords: Words!
+    var lannisterWords: Words!
+    
+    var starkHouse: House!
+    var lannisterHouse: House!
+    
+    var ned: Person!
+    var arya: Person!
+    var tyrion: Person!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Grey Direwolf")
+        starkWords = Words(words: "Winter is coming")
+        starkHouse = House(name: "Stark", sigil: starkSigil, words: starkWords)
+        
+        lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant Lion")
+        lannisterWords = Words(words: "Here me roar")
+        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: lannisterWords)
+        
+        ned = Person(name: "Eddard", alias: "Eddard", house: starkHouse)
+        arya = Person(name: "Arya",  house: starkHouse)
+        tyrion = Person(name: "Tyrion", alias: "The imp", house: lannisterHouse)
     }
     
     override func tearDown() {
@@ -36,14 +52,28 @@ class HouseTests: XCTestCase {
         
         //Given
         XCTAssertNotNil(starkHouse)
-      
+        XCTAssertNotNil(lannisterHouse)
     }
     func testSigilExistence() {
         XCTAssertNotNil(starkSigil)
+        XCTAssertNotNil(lannisterSigil)
     }
   
     func testWordsExistence() {
         XCTAssertNotNil(starkWords)
+        XCTAssertNotNil(lannisterWords)
+    }
+    func testAddPerson() {
+        XCTAssertEqual(starkHouse.count, 0)
+        
+        starkHouse.add(person: arya)
+        XCTAssertEqual(starkHouse.count, 1)
+        
+        starkHouse.add(person: arya)
+        XCTAssertEqual(starkHouse.count, 1)
+        
+        starkHouse.add(person: ned)
+        XCTAssertEqual(starkHouse.count, 2)
     }
     
 }

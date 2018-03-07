@@ -9,18 +9,35 @@
 import UIKit
 
 
+typealias Members = Set<Person>
+
+// Mark: - House
 final class House {
     let name: String
     let sigil: Sigil
     let words: Words
+    private var _members: Members
     
     init(name: String, sigil: Sigil, words: Words) {
        self.name = name
         self.sigil = sigil
         self.words = words
+        //Hago esto para inicializar sin ningun miembro
+        _members = Members()
     }
 }
 
+extension House{
+    var count: Int{
+        return _members.count
+    }
+    
+    func add(person: Person) {
+        _members.insert(person)
+    }
+}
+
+// Mark: - Sigil
 final class Sigil {
     let image: UIImage
     let description: String
