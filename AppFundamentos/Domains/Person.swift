@@ -32,5 +32,10 @@ final class Person {
         self.house = house
     }
     
+}
 
+extension Person {
+    var fullName: String {
+        return "\(name) \(house.name)"
+    }
 }
