@@ -38,17 +38,22 @@ class HouseDetailViewController: UIViewController {
     // Mark: - Life Cycle
     
     //una vez que se han terminado de cargar todas las vistas quiero sincronizar el modelo con las vistas
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        syncModelWithView()
+         syncModelWithView()
     }
     
+ 
     // Mark: - Sync
     func syncModelWithView() {
         //Sincronizamos el modelo con la vista
         houseNameLabel.text = "House \(model.name)"
         sigilImageView.image = model.sigil.image
         wordsLabel.text = "\(model.words.words)"
+        title = model.name
     }
+    
 
 }

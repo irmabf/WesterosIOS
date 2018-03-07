@@ -21,27 +21,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
         window?.makeKeyAndVisible()
         
-        //Creamos el modelo
+        //Creamos unos modelos
         
         let starkWords = Words(words: "Winter is coming")
         let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Grey Direwolf")
         let starkHouse = House(name: "Stark", sigil: starkSigil, words: starkWords)
-        /*
+        
         let lannisterWords = Words(words: "Hear me roar")
         let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant Lion")
         let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: lannisterWords)
         
-        let targaryenWords = Words(words: "Fire and Blood")
-        let targaryenSigil = Sigil(image: #imageLiteral(resourceName: "targaryenSmall.jpg"), description: "Three headed dragon")
-        let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: targaryenWords)
-        */
-        //Creamos el controlador
+       
+        //Creamos los controladores
         
         let starkHouseViewController = HouseDetailViewController(model: starkHouse)
+        let lannisterHouseViewController = HouseDetailViewController(model: lannisterHouse)
+    
         
+        //Creamos el combinador
+        let tabBarViewController = UITabBarController()
+        tabBarViewController.viewControllers = [
+            starkHouseViewController,
+            lannisterHouseViewController]
         
-        //Asignamos el rootVC
-        window?.rootViewController = starkHouseViewController
+        //Asignamos el  combinador al rootvc
+        window?.rootViewController = tabBarViewController
         
         
         
