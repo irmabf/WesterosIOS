@@ -46,8 +46,16 @@ extension House: Equatable{
         return lhs.proxyForEquality == rhs.proxyForEquality
     }
     
+}
+
+// Mark: - Hashable
+extension House: Hashable{
+    var hashValue: Int {
+        return proxyForComparison.hashValue
+    }
     
 }
+
 
 // Mark: - Proxies
 extension House {
@@ -56,6 +64,11 @@ extension House {
     }
 }
 
+extension House {
+    var proxyForComparison: String{
+        return "\(name) \(sigil) \(words)"
+    }
+}
 
 // Mark: - Sigil
 final class Sigil {

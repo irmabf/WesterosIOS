@@ -89,4 +89,9 @@ class HouseTests: XCTestCase {
         
     }
     
+    func testHashable() {
+        //probar que house tiene el valor hashable
+        XCTAssertNotNil(starkHouse.hashValue)
+    }
+    
 }
