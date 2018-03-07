@@ -33,7 +33,10 @@ extension House{
     }
     
     func add(person: Person) {
+        //Prevent for adding members from diferent houses to the same house
+        guard person.house.name == self.name else { return }
         _members.insert(person)
+        
     }
 }
 
