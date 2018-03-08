@@ -38,15 +38,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let lannisterHouseViewController = HouseDetailViewController(model: lannisterHouse)
     
         
-        //Creamos el combinador
+        //Creamos los navigations
+        
+        let starkNavigationController = UINavigationController(rootViewController: starkHouseViewController)
+        let lannisterNavigationController = UINavigationController(rootViewController: lannisterHouseViewController)
+        
+        /*
+         Creamos los combinadores
+         1. Usaremos como combinador un stack de UINavigationControllers dentro de un TabBar
+         2. El UINavigation controller se crea con
+         let starkNavigationController = UINavigationController(rootViewController: elrootcontrollerRaiz)
+         3. Asignamos a nuestra window como raiz el starkNavigationcontroller
+         4. Creo un starkNavigationController y lo meto dentro del Tabbar para dar un estilo como el de la aplicacion de las alarmas y el reloj
+         */
+        
         let tabBarViewController = UITabBarController()
         tabBarViewController.viewControllers = [
+            starkNavigationController, lannisterNavigationController
+        ]
+        
+    
+        
+        /*let tabBarViewController = UITabBarController()
+        tabBarViewController.viewControllers = [
             starkHouseViewController,
-            lannisterHouseViewController]
+            lannisterHouseViewController]*/
         
         //Asignamos el  combinador al rootvc
         window?.rootViewController = tabBarViewController
-        
         
         
         
