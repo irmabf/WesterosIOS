@@ -24,10 +24,11 @@ class HouseDetailViewController: UIViewController {
     // Mark: - Initialization
     
     init(model: House) {
-        //limpio mi propio desorden, es decir, inicializado mi propiedad de la clase hiha
+        //limpio mi propio desorden, es decir, inicializado mi propiedad de la clase hija
         self.model = model
         //llamo al super init
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
+         title = model.name
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,7 +53,7 @@ class HouseDetailViewController: UIViewController {
         houseNameLabel.text = "House \(model.name)"
         sigilImageView.image = model.sigil.image
         wordsLabel.text = "\(model.words.words)"
-        title = model.name
+       
     }
     
 
