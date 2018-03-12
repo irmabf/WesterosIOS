@@ -21,54 +21,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
         window?.makeKeyAndVisible()
         
-        //Creamos unos modelos
-        
-        let starkWords = Words(words: "Winter is coming")
-        let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Grey Direwolf")
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: starkWords)
-        
-        let lannisterWords = Words(words: "Hear me roar")
-        let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant Lion")
-        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: lannisterWords)
-        
        
-        //Creamos los controladores
         
-        let starkHouseViewController = HouseDetailViewController(model: starkHouse)
-        let lannisterHouseViewController = HouseDetailViewController(model: lannisterHouse)
-    
+        //Creamos el modelo, que sera el array de casas
         
-        //Creamos los navigations
+        let houses = Repository.local.houses
+       
+       
+        //Creamos los controladores como un array controllers de tipo UIViewControllers, lo inicializamos como un array vadcio de UIViewcoNTROLLER()
+        var controllers = [UIViewController]()
         
-        //let starkNavigationController = starkHouseViewController.wrappedInNavigation()
-        //let lannisterNavigationController = lannisterHouseViewController.wrappedInNavigation()
+   
+        for house in houses {
+            controllers.append(HouseDetailViewController(model: house).wrappedInNavigation())
+        }
         
-        /*
-         Creamos los combinadores
-         1. Usaremos como combinador un stack de UINavigationControllers dentro de un TabBar
-         2. El UINavigation controller se crea con
-         let starkNavigationController = UINavigationController(rootViewController: elrootcontrollerRaiz)
-         3. Asignamos a nuestra window como raiz el tabBarViewController
-         4. Creo un starkNavigationController y lo meto dentro del Tabbar para dar un estilo como el de la aplicacion de las alarmas y el reloj
-         */
+       /* var navigationControllers = [UINavigationController]()
+        for controller in controllers {
+            navigationControllers.append(controller.wrappedInNavigation())
+        }*/
         
+        //Creamos los combinadors
         let tabBarViewController = UITabBarController()
-        tabBarViewController.viewControllers = [
-            starkHouseViewController.wrappedInNavigation(),
-            lannisterHouseViewController.wrappedInNavigation()
-        ]
+        tabBarViewController.viewControllers = controllers
         
-    
-        
-        /*let tabBarViewController = UITabBarController()
-        tabBarViewController.viewControllers = [
-            starkHouseViewController,
-            lannisterHouseViewController]*/
-        
-        //Asignamos el  combinador al rootvc
+        //Asignamos el rootVC
         window?.rootViewController = tabBarViewController
-        
-        
         
         return true
     }
