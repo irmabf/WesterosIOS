@@ -20,6 +20,7 @@ final class Repository {
 //la propiedad houses va a ser un array de casas que solo va a ser de lectura
 protocol HouseFactory {
     var houses: [House]{get}
+    func house(named: String) -> House? 
 }
 
 

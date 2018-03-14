@@ -13,7 +13,8 @@ import Foundation
 
 
 final class LocalFactory: HouseFactory {
-    var houses: [House] {
+
+        var houses: [House] {
         //Houses creation here
         
         let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Grey Direwolf")
@@ -50,5 +51,36 @@ final class LocalFactory: HouseFactory {
         
         return [starkHouse, lannisterHouse, targaryenHouse].sorted()
     }
+    func house(named name: String) -> House? {
+        //let house = houses.filter{ $0.name.uppercased() == name.uppercased() }
+        let house = houses.first{ $0.name.uppercased() == name.uppercased() }
+        return house
+        
+    
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
