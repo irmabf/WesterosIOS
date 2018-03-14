@@ -29,6 +29,7 @@ class HouseTests: XCTestCase {
     var tyrion: Person!
     
     override func setUp() {
+       
         super.setUp()
         starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Grey Direwolf")
         starkWords = Words(words: "Winter is coming")
@@ -41,6 +42,9 @@ class HouseTests: XCTestCase {
         ned = Person(name: "Eddard", alias: "Eddard", house: starkHouse)
         arya = Person(name: "Arya",  house: starkHouse)
         tyrion = Person(name: "Tyrion", alias: "The imp", house: lannisterHouse)
+        
+ 
+ 
     }
     
     override func tearDown() {

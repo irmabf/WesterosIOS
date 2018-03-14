@@ -36,10 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             controllers.append(HouseDetailViewController(model: house).wrappedInNavigation())
         }
         
-       /* var navigationControllers = [UINavigationController]()
-        for controller in controllers {
-            navigationControllers.append(controller.wrappedInNavigation())
-        }*/
         
         //Creamos los combinadors
         let tabBarViewController = UITabBarController()

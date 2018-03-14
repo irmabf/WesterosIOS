@@ -28,6 +28,9 @@ class RepositoryTests: XCTestCase {
     
     func testLocalRepositoryHousesCreation() {
         let houses = Repository.local.houses
+        
+       
+        
         //testeo que houses existe
         XCTAssertNotNil(houses)
         //testeo que houses no esté vacio
