@@ -9,10 +9,6 @@
 import XCTest
 @testable import AppFundamentos
 
-
-
-
-
 class HouseTests: XCTestCase {
     
     var starkSigil: Sigil!
@@ -98,6 +94,10 @@ class HouseTests: XCTestCase {
         
         starkHouse.add(person: tyrion)
         XCTAssertEqual(starkHouse.count, 2)
+        
+        lannisterHouse.add(persons: cersei, jaime)
+        XCTAssertEqual(lannisterHouse.count, 2)
+        
     }
     func testHouseEquality() {
         //identidad
@@ -118,5 +118,43 @@ class HouseTests: XCTestCase {
     func testHouseComparison() {
         XCTAssertLessThan(lannisterHouse, starkHouse)
     }
-    
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

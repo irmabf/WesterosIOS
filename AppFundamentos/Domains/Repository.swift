@@ -16,11 +16,5 @@ final class Repository {
     static let local = LocalFactory()
 }
 
-//A todo objeto que implemente mi prototipo HouseFactory voy a obligarle a que tenga una propiedad houses
-//la propiedad houses va a ser un array de casas que solo va a ser de lectura
-protocol HouseFactory {
-    var houses: [House]{get}
-    func house(named: String) -> House? 
-}
 
 

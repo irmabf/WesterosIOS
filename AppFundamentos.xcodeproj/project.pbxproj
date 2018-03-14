@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7004DA42059B0430042141A /* HouseFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7004DA32059B0430042141A /* HouseFactoryProtocol.swift */; };
 		B70CB479205050F20047A532 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70CB478205050F20047A532 /* Person.swift */; };
 		B70CB47B205051040047A532 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70CB47A205051040047A532 /* PersonTests.swift */; };
 		B70CB47F205088B50047A532 /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70CB47D205088B50047A532 /* HouseDetailViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7004DA32059B0430042141A /* HouseFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseFactoryProtocol.swift; sourceTree = "<group>"; };
 		B70CB478205050F20047A532 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B70CB47A205051040047A532 /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		B70CB47D205088B50047A532 /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				B70CB478205050F20047A532 /* Person.swift */,
 				B7DD36C42056D2EE00ED68E9 /* Repository.swift */,
 				B7DD36C62056D65600ED68E9 /* LocalFactory.swift */,
+				B7004DA32059B0430042141A /* HouseFactoryProtocol.swift */,
 			);
 			path = Domains;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				B70CB47F205088B50047A532 /* HouseDetailViewController.swift in Sources */,
 				B70CB479205050F20047A532 /* Person.swift in Sources */,
 				B74C2F8C205047C9001DA8D9 /* House.swift in Sources */,
+				B7004DA42059B0430042141A /* HouseFactoryProtocol.swift in Sources */,
 				B7A953D42051E55100F226DB /* UIViewController+Additions.swift in Sources */,
 				B74C2F69205042F7001DA8D9 /* AppDelegate.swift in Sources */,
 				B7DD36C72056D65600ED68E9 /* LocalFactory.swift in Sources */,

@@ -8,12 +8,12 @@
 
 import Foundation
 
+
 //Creo la clase LocalFactory, que es la que da valor a mi variable local
 //Esta clase implementa el protocolo Housefactory
 
-
 final class LocalFactory: HouseFactory {
-
+    
         var houses: [House] {
         //Houses creation here
         
@@ -55,9 +55,12 @@ final class LocalFactory: HouseFactory {
         //let house = houses.filter{ $0.name.uppercased() == name.uppercased() }
         let house = houses.first{ $0.name.uppercased() == name.uppercased() }
         return house
-        
-    
     }
+    
+    func houses(filteredBy: Filter) -> [House] {
+        return houses.filter(filteredBy)
+    }
+    
 }
 
 
