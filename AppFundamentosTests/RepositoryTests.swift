@@ -34,7 +34,7 @@ class RepositoryTests: XCTestCase {
         //testeo que houses existe
         XCTAssertNotNil(localHouses)
         //testeo que houses no esté vacio
-        XCTAssertEqual(localHouses.count, 2)
+        XCTAssertEqual(localHouses.count, 3)
     }
     
     func testLocalRepositoryReturnsSortedArrayOfHouses() {

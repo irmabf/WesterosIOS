@@ -16,25 +16,39 @@ final class LocalFactory: HouseFactory {
     var houses: [House] {
         //Houses creation here
         
-        let starkWords = Words(words: "Winter is coming")
         let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Grey Direwolf")
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: starkWords)
-        
-        let lannisterWords = Words(words: "Hear me roar")
         let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant Lion")
+        let targaryenSigil = Sigil(image: #imageLiteral(resourceName: "targaryenSmall.jpg"), description: "Three headed dragon")
+        
+        let starkWords = Words(words: "Winter is coming")
+        let lannisterWords = Words(words: "Hear me roar")
+        let targaryenWords = Words(words: "Fire and blood")
+        
+        let starkHouse = House(name: "Stark", sigil: starkSigil, words: starkWords)
         let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: lannisterWords)
+        let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: targaryenWords)
         
         
         let ned = Person(name: "Eddard", alias: "Eddard", house: starkHouse)
         let arya = Person(name: "Arya",  house: starkHouse)
+        
         let tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        let jaime = Person(name: "Jaime", alias: "The Kingslayer", house: lannisterHouse)
+        let cersei = Person(name: "Cersei", house: lannisterHouse)
+        
+        let dani = Person(name: "Daenerys", alias: "The Mother of Dragons", house: targaryenHouse)
+        let viserys = Person(name: "Viserys", alias: "The Beggar King", house: targaryenHouse)
         
         //Add characters to houses
         starkHouse.add(person: ned)
         starkHouse.add(person: arya)
         lannisterHouse.add(person: tyrion)
+        lannisterHouse.add(person: jaime)
+        lannisterHouse.add(person: cersei)
+        targaryenHouse.add(person: dani)
+        targaryenHouse.add(person: viserys)
         
-        return [starkHouse, lannisterHouse].sorted()
+        return [starkHouse, lannisterHouse, targaryenHouse].sorted()
     }
 }
 
