@@ -10,8 +10,11 @@ import XCTest
 @testable import AppFundamentos
 class RepositoryTests: XCTestCase {
     
+      var localHouses: [House]!
+    
     override func setUp() {
         super.setUp()
+        localHouses = Repository.local.houses
     
     }
     
@@ -27,14 +30,17 @@ class RepositoryTests: XCTestCase {
     }
     
     func testLocalRepositoryHousesCreation() {
-        let houses = Repository.local.houses
-        
-       
         
         //testeo que houses existe
-        XCTAssertNotNil(houses)
+        XCTAssertNotNil(localHouses)
         //testeo que houses no esté vacio
-        XCTAssertEqual(houses.count, 2)
+        XCTAssertEqual(localHouses.count, 2)
     }
+    
+    func testLocalRepositoryReturnsSortedArrayOfHouses() {
+        XCTAssertEqual(localHouses, localHouses.sorted())
+    }
+    
+    
     
 }

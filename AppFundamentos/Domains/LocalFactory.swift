@@ -34,7 +34,7 @@ final class LocalFactory: HouseFactory {
         starkHouse.add(person: arya)
         lannisterHouse.add(person: tyrion)
         
-        return [starkHouse, lannisterHouse]
+        return [starkHouse, lannisterHouse].sorted()
     }
 }
 
