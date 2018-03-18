@@ -37,7 +37,7 @@ extension House{
         guard person.house == self else { return }
         _members.insert(person)
     }
-    func add(persons: P)
+    func add(persons: Person...)
 }
 
 // Mark: - Equatable
