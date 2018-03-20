@@ -42,10 +42,42 @@ class WikiViewController: UIViewController {
     }
 
 }
-
+//Navigation delegate extension
 extension WikiViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         loadingView.stopAnimating()
         loadingView.isHidden = true
     }
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        //Necesitamos saber el tipo de navigationaction
+        let type = navigationAction.navigationType
+        switch type {
+        case .linkActivated, .formSubmitted:
+            decisionHandler(.cancel)
+        default:
+            decisionHandler(.allow)
+            
+        }
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
