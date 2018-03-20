@@ -24,16 +24,18 @@ class WikiViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    // Mark: - Lyfe Cycle
+    
+    // Mark: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         syncModelWithView()
     }
+ 
     // Mark: - Sync
     func syncModelWithView() {
         title =  model.name
         webView.load(URLRequest(url: model.wikiURL))
     }
-    
+
 
 }

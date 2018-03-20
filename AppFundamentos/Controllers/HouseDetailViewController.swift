@@ -43,9 +43,11 @@ class HouseDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         setupUI()
          syncModelWithView()
     }
     
+
  
     // Mark: - Sync
     func syncModelWithView() {
@@ -54,6 +56,25 @@ class HouseDetailViewController: UIViewController {
         sigilImageView.image = model.sigil.image
         wordsLabel.text = "\(model.words.words)"
        
+    }
+    
+    // Mark: - UI
+    func setupUI() {
+        //Create Button
+        let wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: self , action: #selector(displayWiki) )
+        //Add button to view
+        navigationItem.rightBarButtonItem = wikiButton
+    }
+    //Navegar desde HouseDetailController a WikiViewController
+    //Estoy dentro de un HouseDetailVieWController empaquetado dentro de un
+    //NavigationViewController
+    
+    @objc func displayWiki() {
+        //Creamos el WikiVC
+        let wikiViewController = WikiViewController(model: model)
+        //Hacemos push
+        navigationController?.pushViewController(wikiViewController, animated: true)
+        
     }
     
 
