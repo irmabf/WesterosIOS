@@ -25,9 +25,9 @@ final class LocalFactory: HouseFactory {
         let lannisterWords = Words(words: "Hear me roar")
         let targaryenWords = Words(words: "Fire and blood")
         
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: starkWords, url: URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!)
-        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: lannisterWords, url: URL(string: "http://awoiaf.westeros.org/index.php/Lannister")!)
-        let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: targaryenWords, url: URL(string: "http://awoiaf.westeros.org/index.php/House_Targaryen")!)
+        let starkHouse = House(name: "Stark", sigil: starkSigil, words: starkWords, url: URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!)
+        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: lannisterWords, url: URL(string: "https://awoiaf.westeros.org/index.php/Lannister")!)
+        let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: targaryenWords, url: URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!)
         
         
         let ned = Person(name: "Eddard", alias: "Eddard", house: starkHouse)

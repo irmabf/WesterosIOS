@@ -11,7 +11,8 @@ import WebKit
 class WikiViewController: UIViewController {
 
     // Mark: - Outlets
-      @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
     
     // Mark: - Properties
     let model: House
@@ -28,6 +29,9 @@ class WikiViewController: UIViewController {
     // Mark: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingView.isHidden = false
+        loadingView.startAnimating()
+        webView.navigationDelegate = self
         syncModelWithView()
     }
  
@@ -37,5 +41,11 @@ class WikiViewController: UIViewController {
         webView.load(URLRequest(url: model.wikiURL))
     }
 
+}
 
+extension WikiViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        loadingView.stopAnimating()
+        loadingView.isHidden = true
+    }
 }
