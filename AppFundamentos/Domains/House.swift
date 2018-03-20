@@ -37,7 +37,14 @@ extension House{
         guard person.house == self else { return }
         _members.insert(person)
     }
-    func add(persons: Person...)
+   
+    func add(persons: Person...){
+        //Aqui persons es del tipo  [Person]
+        //for person in persons {
+        //add(person: person)
+        //}
+        persons.forEach{ add(person: $0) }
+    }
 }
 
 // Mark: - Equatable
