@@ -37,18 +37,18 @@ class PersonTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
+                
         starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Grey Direwolf")
         starkWords = Words(words: "Winter is coming")
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: starkWords)
+        starkHouse =  House(name: "Stark", sigil: starkSigil, words: starkWords, url: URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!)
         
         lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant Lion")
         lannisterWords = Words(words: "Here me roar")
-        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: lannisterWords)
+        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: lannisterWords, url: URL(string: "http://awoiaf.westeros.org/index.php/Lannister")!)
         
         targaryenSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Three headed dragon")
         targaryenWords = Words(words: "Fire and Blood")
-        targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: targaryenWords)
+        targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: targaryenWords, url: URL(string: "http://awoiaf.westeros.org/index.php/House_Targaryen")!)
         
         ned = Person(name: "Eddard", alias: "Eddard", house: starkHouse)
         arya = Person(name: "Arya",  house: starkHouse)
