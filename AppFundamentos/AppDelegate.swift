@@ -28,16 +28,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let houses = Repository.local.houses
        
        //Creamos los controladores y los combinadores
-        let tabBarViewController = UITabBarController()
+       /* let tabBarViewController = UITabBarController()
         
         tabBarViewController.viewControllers =
             houses
                 .map{ HouseDetailViewController(model: $0) }
                 .map{ $0.wrappedInNavigation() }
+        */
         
+        
+        //Creamos la tabla
+        let houseListViewController = HouseListViewController(model: houses)
         
         //Asignamos el rootVC
-        window?.rootViewController = tabBarViewController
+        window?.rootViewController = houseListViewController.wrappedInNavigation()
         
         return true
     }
