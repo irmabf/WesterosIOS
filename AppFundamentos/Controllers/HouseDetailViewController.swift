@@ -19,7 +19,7 @@ class HouseDetailViewController: UIViewController {
     
     //el model del HouseDetailViewController necesita mostrar una casa, luego:
     
-    let model: House
+    var model: House
     
     // Mark: - Initialization
     
@@ -87,5 +87,20 @@ class HouseDetailViewController: UIViewController {
         navigationController?.pushViewController(memberListViewController, animated: true)
     }
     
-
 }
+/* //Crear un controlador de detalle de esa casa
+ let houseDetailViewController = HouseDetailViewController(model: house)
+ 
+ 
+ //Hacer un push
+ navigationController?.pushViewController(houseDetailViewController, animated: true)*/
+
+extension HouseDetailViewController: HouseListViewControllerDelegate {
+    func houseListViewController(_ vc: HouseListViewController, didSelectHouse house: House) {
+        //ahora self.model es igual a la house que se ha seleccionado
+        self.model = house
+        syncModelWithView()
+    }
+    
+}
+

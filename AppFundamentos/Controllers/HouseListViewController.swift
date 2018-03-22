@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol HouseListViewControllerDelegate {
+    //should, will, did
+    func houseListViewController(_ vc: HouseListViewController, didSelectHouse house: House)
+}
+
 class HouseListViewController: UITableViewController {
     
     // Mark: - Properties
     let model: [House]
+    var delegate: HouseListViewControllerDelegate?
     
     // Mark: - Initialization
     init(model: [House]) {
@@ -57,20 +63,12 @@ class HouseListViewController: UITableViewController {
     // Mark: - Table View Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         //Averiguar que casa han pulsado
         let house = model[indexPath.row]
-        //Crear un controlador de detalle de esa casa
-        let houseDetailViewController = HouseDetailViewController(model: house)
-        //Hacer un push
-        navigationController?.pushViewController(houseDetailViewController, animated: true)
+        
+        //Avisamos al delegado
+        delegate?.houseListViewController(self, didSelectHouse: house)
+        
     }
-    
-    
-   
-  
-
- 
-
-   
-    
 }

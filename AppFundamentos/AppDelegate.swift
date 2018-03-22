@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         
         //Creamos el modelo, que sera el array de casas
-        
         let houses = Repository.local.houses
        
        //Creamos los controladores y los combinadores
@@ -36,12 +35,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .map{ $0.wrappedInNavigation() }
         */
         
+        //Creamos los controladores (masterVC, detailVC)
+        let houseListViewController = HouseListViewController(model: houses).wrappedInNavigation()
+        let houseDetailViewController = HouseDetailViewController(model: houses.first!).wrappedInNavigation()
+      
+        //Creamos el UISplitViewController y le asignamos los ViewControllers
+        let splitViewController = UISplitViewController()
+        splitViewController.viewControllers = [houseListViewController, houseDetailViewController]
         
-        //Creamos la tabla
-        let houseListViewController = HouseListViewController(model: houses)
         
         //Asignamos el rootVC
-        window?.rootViewController = houseListViewController.wrappedInNavigation()
+        window?.rootViewController = splitViewController
         
         return true
     }
