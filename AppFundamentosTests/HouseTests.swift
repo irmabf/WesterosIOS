@@ -25,6 +25,7 @@ class HouseTests: XCTestCase {
     
     var ned: Person!
     var arya: Person!
+    var robb: Person!
     var tyrion: Person!
     var cersei: Person!
     var jaime: Person!
@@ -49,6 +50,7 @@ class HouseTests: XCTestCase {
         
         ned = Person(name: "Eddard", alias: "Eddard", house: starkHouse)
         arya = Person(name: "Arya",  house: starkHouse)
+        robb = Person(name: "Robb", alias: "The Young Wolf", house: starkHouse)
         
         tyrion = Person(name: "Tyrion", alias: "The imp", house: lannisterHouse)
         
@@ -120,6 +122,11 @@ class HouseTests: XCTestCase {
         XCTAssertLessThan(lannisterHouse, starkHouse)
     }
     
+    func  testHouseReturnsSortedArrayOfMembers() {
+        starkHouse.add(persons: robb, arya)
+        XCTAssertEqual(starkHouse.sortedMembers, [arya, robb])
+        
+    }
    
   
 }
