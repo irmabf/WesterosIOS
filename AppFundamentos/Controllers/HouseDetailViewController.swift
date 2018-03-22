@@ -63,7 +63,10 @@ class HouseDetailViewController: UIViewController {
         //Create Button
         let wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: self , action: #selector(displayWiki) )
         //Add button to view
-        navigationItem.rightBarButtonItem = wikiButton
+        let members = UIBarButtonItem(title: "Members", style: .plain, target: self, action:
+            #selector(displayMembers))
+    
+        navigationItem.rightBarButtonItems = [wikiButton, members]
     }
     //Navegar desde HouseDetailController a WikiViewController
     //Estoy dentro de un HouseDetailVieWController empaquetado dentro de un
@@ -75,6 +78,13 @@ class HouseDetailViewController: UIViewController {
         //Hacemos push
         navigationController?.pushViewController(wikiViewController, animated: true)
         
+    }
+    
+    @objc func displayMembers() {
+        //Creamo sel vc
+        let memberListViewController = MemberListViewController(model: model.sortedMembers)
+        //Hacemos un push
+        navigationController?.pushViewController(memberListViewController, animated: true)
     }
     
 

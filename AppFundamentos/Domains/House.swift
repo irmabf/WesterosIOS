@@ -59,8 +59,13 @@ extension House: Equatable{
 
 // Mark: - Hashable
 extension House: Hashable{
+    
     var hashValue: Int {
         return proxyForEquality.hashValue
+    }
+    
+    var sortedMembers: [Person] {
+        return _members.sorted()
     }
     
 }
