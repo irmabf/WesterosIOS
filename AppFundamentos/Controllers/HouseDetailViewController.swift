@@ -101,6 +101,6 @@ extension HouseDetailViewController: HouseListViewControllerDelegate {
         self.model = house
         syncModelWithView()
     }
-    
+  
 }
 
