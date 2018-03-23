@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let houseListViewController = HouseListViewController(model: houses)
         let houseDetailViewController = HouseDetailViewController(model: houses.first!)
         
-        //Asignamos delegados
+        //Asignamos delegados, el delegado de la lista será el detalle
         houseListViewController.delegate = houseDetailViewController
       
         //Creamos el UISplitViewController y le asignamos los ViewControllers

@@ -8,6 +8,9 @@
 
 import UIKit
 
+let HOUSE_KEY = "HouseKey"
+let HOUSE_DID_CHANGE_NOTIFICATION_NAME = "HouseDidChange"
+
 protocol HouseListViewControllerDelegate {
     //should, will, did
     func houseListViewController(_ vc: HouseListViewController, didSelectHouse house: House)
@@ -69,6 +72,12 @@ class HouseListViewController: UITableViewController {
         
         //Avisamos al delegado
         delegate?.houseListViewController(self, didSelectHouse: house)
+        
+        //Mando la misma info a través de notificaciones
+    let notificationCenter = NotificationCenter.default
+    let notification = Notification(name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [HOUSE_KEY: house])
+        
+    notificationCenter.post(notification)
         
     }
 }
