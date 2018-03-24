@@ -10,6 +10,7 @@ import UIKit
 
 let HOUSE_KEY = "HouseKey"
 let HOUSE_DID_CHANGE_NOTIFICATION_NAME = "HouseDidChange"
+let LAST_HOUSE = "LAST_HOUSE"
 
 protocol HouseListViewControllerDelegate {
     //should, will, did
@@ -31,6 +32,15 @@ class HouseListViewController: UITableViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // Mark: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let lastRow = UserDefaults.standard.integer(forKey: LAST_HOUSE)
+        let indexPath = IndexPath(row: lastRow, section: 0)
+        
+        tableView.selectRow(at: indexPath , animated: true, scrollPosition: .top)
     }
   
     // MARK: - Table view data source
@@ -74,10 +84,44 @@ class HouseListViewController: UITableViewController {
         delegate?.houseListViewController(self, didSelectHouse: house)
         
         //Mando la misma info a través de notificaciones
-    let notificationCenter = NotificationCenter.default
-    let notification = Notification(name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [HOUSE_KEY: house])
+        let notificationCenter = NotificationCenter.default
+        let notification = Notification(name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [HOUSE_KEY: house])
         
-    notificationCenter.post(notification)
-        
+        notificationCenter.post(notification)
+        // Guardar las coordenadas (section, row) de la ultima casa seleccionada
+        saveLastSelectedHouse(at: indexPath.row)
     }
 }
+extension HouseListViewController {
+    func saveLastSelectedHouse(at row: Int) {
+        let defaults = UserDefaults.standard
+        defaults.set(row, forKey: LAST_HOUSE)
+        //Por si acaso
+        defaults.synchronize()
+    }
+    func lastSelectedHouse() -> House {
+        //Extraer la row
+        let row = UserDefaults.standard.integer(forKey: LAST_HOUSE)
+        //Averiguar la casa de ese row
+        let house = model[row]
+        //Devolverla
+        return house
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

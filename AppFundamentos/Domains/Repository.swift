@@ -10,8 +10,8 @@ import UIKit
 
 //Creo la final clas repository
 final class Repository {
-    //ahora necesito una variable, propiedad estatica local, que es la que usare para extraer los datos
-    //creamos una variable estatica local del tipo, va a ser iguala  LocalFactory, clase que tenemos que crear
+    //ahora necesito una variable, propiedad estatica local, que es la que usare para extraer los datos de la factoria de datos
+    //creamos una variable estatica local del tipo, va a ser igual  LocalFactory, clase que tenemos que crear
     
     static let local = LocalFactory()
 }
