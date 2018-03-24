@@ -19,6 +19,9 @@ protocol HouseFactory {
     typealias Filter = (House) -> Bool
     var houses: [House]{get}
     func house(named: String) -> House?
+    func house(named: HouseName) -> House?
+    //Safe type
     //con el typealuias recibo una casa y devuelvo un booleano y la funcion devuelve un array de casas que cumplen el filtro
     func houses(filteredBy: Filter ) -> [House]
 }
+

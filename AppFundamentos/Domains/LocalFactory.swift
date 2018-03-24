@@ -13,7 +13,11 @@ import Foundation
 //Esta clase implementa el protocolo Housefactory
 
 final class LocalFactory: HouseFactory {
+   
     
+    func house(named name: HouseName) -> House? {
+        return house(named: name.rawValue)
+    }
         var houses: [House] {
         //Houses creation here
         

@@ -54,6 +54,11 @@ class MemberListTableViewController: UITableViewController {
         
     }
     
+    func person(at indexPath: IndexPath) -> Person {
+        return model[indexPath.row]
+    }
+    
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -70,8 +75,7 @@ class MemberListTableViewController: UITableViewController {
         
         //Descubrir cual es el miembro de la casa que tenemos que mostrar
         
-        let member = model[indexPath.row]
-    
+        let member = person(at: indexPath)
         //Crear una celda
         
         var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
@@ -87,7 +91,10 @@ class MemberListTableViewController: UITableViewController {
     
     // Mark: - Table View Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let member = person(at: indexPath)
         
+        let memberDetailViewController = MemberDetailViewController(model: member)
+        navigationController?.pushViewController(memberDetailViewController, animated: true)
     }
 
   
