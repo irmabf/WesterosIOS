@@ -82,7 +82,8 @@ class HouseDetailViewController: UIViewController {
     
     @objc func displayMembers() {
         //Creamo sel vc
-        let memberListViewController = MemberListViewController(model: model.sortedMembers)
+        let memberListViewController = MemberListTableViewController(model: model.sortedMembers)
+        //let memberListViewController = MemberListViewController(model: model.sortedMembers)
         //Hacemos un push
         navigationController?.pushViewController(memberListViewController, animated: true)
     }
