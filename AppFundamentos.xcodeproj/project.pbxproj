@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B7004DA42059B0430042141A /* HouseFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7004DA32059B0430042141A /* HouseFactoryProtocol.swift */; };
 		B70CB479205050F20047A532 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70CB478205050F20047A532 /* Person.swift */; };
 		B70CB47B205051040047A532 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70CB47A205051040047A532 /* PersonTests.swift */; };
 		B70CB47F205088B50047A532 /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70CB47D205088B50047A532 /* HouseDetailViewController.swift */; };
 		B70CB480205088B50047A532 /* HouseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70CB47E205088B50047A532 /* HouseDetailViewController.xib */; };
+		B74838F42067719000CDC53B /* SeasonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74838F22067719000CDC53B /* SeasonDetailViewController.swift */; };
+		B74838F52067719000CDC53B /* SeasonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74838F32067719000CDC53B /* SeasonDetailViewController.xib */; };
+		B74838F82067767D00CDC53B /* SeasonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74838F62067767D00CDC53B /* SeasonListViewController.swift */; };
+		B74838F92067767D00CDC53B /* SeasonListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74838F72067767D00CDC53B /* SeasonListViewController.xib */; };
 		B74C2F69205042F7001DA8D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74C2F68205042F7001DA8D9 /* AppDelegate.swift */; };
 		B74C2F70205042F7001DA8D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74C2F6F205042F7001DA8D9 /* Assets.xcassets */; };
 		B74C2F73205042F7001DA8D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74C2F71205042F7001DA8D9 /* LaunchScreen.storyboard */; };
@@ -50,11 +53,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B7004DA32059B0430042141A /* HouseFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseFactoryProtocol.swift; sourceTree = "<group>"; };
 		B70CB478205050F20047A532 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B70CB47A205051040047A532 /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		B70CB47D205088B50047A532 /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
 		B70CB47E205088B50047A532 /* HouseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseDetailViewController.xib; sourceTree = "<group>"; };
+		B74838F22067719000CDC53B /* SeasonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonDetailViewController.swift; sourceTree = "<group>"; };
+		B74838F32067719000CDC53B /* SeasonDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonDetailViewController.xib; sourceTree = "<group>"; };
+		B74838F62067767D00CDC53B /* SeasonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonListViewController.swift; sourceTree = "<group>"; };
+		B74838F72067767D00CDC53B /* SeasonListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonListViewController.xib; sourceTree = "<group>"; };
 		B74C2F65205042F7001DA8D9 /* AppFundamentos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFundamentos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B74C2F68205042F7001DA8D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B74C2F6F205042F7001DA8D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,9 +120,13 @@
 				B7B20899206181F50060853D /* HouseListViewController.swift */,
 				B7B2089A206181F50060853D /* HouseListViewController.xib */,
 				B7C4E06B2066C51A00260D3F /* MemberListTableViewController.swift */,
+				B74838F62067767D00CDC53B /* SeasonListViewController.swift */,
+				B74838F72067767D00CDC53B /* SeasonListViewController.xib */,
 				B7C4E06C2066C51A00260D3F /* MemberListTableViewController.xib */,
 				B7C4E08B2066FC7D00260D3F /* MemberDetailViewController.swift */,
 				B7C4E08C2066FC7D00260D3F /* MemberDetailViewController.xib */,
+				B74838F22067719000CDC53B /* SeasonDetailViewController.swift */,
+				B74838F32067719000CDC53B /* SeasonDetailViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,7 +192,6 @@
 				B70CB478205050F20047A532 /* Person.swift */,
 				B7DD36C42056D2EE00ED68E9 /* Repository.swift */,
 				B7DD36C62056D65600ED68E9 /* LocalFactory.swift */,
-				B7004DA32059B0430042141A /* HouseFactoryProtocol.swift */,
 				B7C4E07B2066F94800260D3F /* HouseName.swift */,
 				B7C4E07D2066FA1200260D3F /* Episode.swift */,
 				B7C4E07F2066FA1F00260D3F /* Season.swift */,
@@ -286,7 +295,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B70CB480205088B50047A532 /* HouseDetailViewController.xib in Resources */,
+				B74838F92067767D00CDC53B /* SeasonListViewController.xib in Resources */,
 				B7C4E08E2066FC7D00260D3F /* MemberDetailViewController.xib in Resources */,
+				B74838F52067719000CDC53B /* SeasonDetailViewController.xib in Resources */,
 				B7C4E06E2066C51A00260D3F /* MemberListTableViewController.xib in Resources */,
 				B7B2089420616CD70060853D /* WikiViewController.xib in Resources */,
 				B7F52C652051E800007761EE /* targaryenSmall.jpg in Resources */,
@@ -316,7 +327,6 @@
 				B7B2089320616CD70060853D /* WikiViewController.swift in Sources */,
 				B70CB479205050F20047A532 /* Person.swift in Sources */,
 				B74C2F8C205047C9001DA8D9 /* House.swift in Sources */,
-				B7004DA42059B0430042141A /* HouseFactoryProtocol.swift in Sources */,
 				B7A953D42051E55100F226DB /* UIViewController+Additions.swift in Sources */,
 				B74C2F69205042F7001DA8D9 /* AppDelegate.swift in Sources */,
 				B7C4E07E2066FA1200260D3F /* Episode.swift in Sources */,
@@ -324,9 +334,11 @@
 				B7C4E06D2066C51A00260D3F /* MemberListTableViewController.swift in Sources */,
 				B7DD36C72056D65600ED68E9 /* LocalFactory.swift in Sources */,
 				B7DD36C52056D2EE00ED68E9 /* Repository.swift in Sources */,
+				B74838F42067719000CDC53B /* SeasonDetailViewController.swift in Sources */,
 				B7C4E0802066FA1F00260D3F /* Season.swift in Sources */,
 				B7C4E08D2066FC7D00260D3F /* MemberDetailViewController.swift in Sources */,
 				B7C4E07C2066F94800260D3F /* HouseName.swift in Sources */,
+				B74838F82067767D00CDC53B /* SeasonListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
